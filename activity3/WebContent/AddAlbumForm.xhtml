@@ -1,0 +1,34 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<head>
+<title>Add Music Album</title>
+</head>
+<h:body>
+	<div  align="center">
+		<h1 style="text-align:center">Add Music Album</h1>
+			<h:form>
+				<h2>Enter an album:</h2>
+					<h:outputLabel for="title">Album Title:</h:outputLabel>
+					<h:inputText value="#{album.title}"/><h:message for="title"/>
+					<br></br>
+					<h:outputLabel for="artist">Album Artist:</h:outputLabel>
+					<h:inputText value="#{album.artist}"></h:inputText><h:message for="artist"/>
+					<br></br>
+					<h:outputLabel for="year">Album Year:</h:outputLabel>
+					<h:inputText value="#{album.year}" minlength="4"></h:inputText><h:message for="year"/>
+					<br></br>
+					<h:commandButton value="Submit" action="#{albumController.onSubmit(album)}"></h:commandButton>
+					<!-- <h:commandButton action="#{albumController.onSubmit(album)}" value="Submit">
+					</h:commandButton> --> 
+			</h:form>
+		<h:messages/>
+	</div>
+</h:body>
+</html>
